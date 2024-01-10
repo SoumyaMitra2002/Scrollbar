@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Horizontally</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img class="prevbutton" src="download.png" id="prebutton" alt="">
+        <div class="gallery">
+            <div>
+                <span class="soumya"><img src="Soumya2 (2).jpg" alt=""></span>
+                <span class="soumya"><img src="Soumya2 (2).jpg" alt=""></span>
+                <span class="soumya"><img src="Soumya2 (2).jpg" alt=""></span>
+            </div>
+            <div class="rest">
+                <span class="soumya"><img src="Soumya2 (2).jpg" alt=""></span>
+                <span class="soumya"><img src="Soumya2 (2).jpg" alt=""></span>
+                <span class="soumya"><img src="Soumya2 (2).jpg" alt=""></span>
+            </div>
+        </div>
+        <img class="nexttbutton" src="next-button-green-icon.png" id="nextbutton" alt="">
+    </div>
+    <script>
+        let scrollContainer=document.querySelector(".gallery");
+        let prevbutton=document.getElementById("prebutton");
+        let nextbutton=document.getElementById("nextbutton");
+        scrollContainer.addEventListener("wheel",(evt) =>{
+            evt.preventDefault();
+            scrollContainer.scrollLeft+=evt.deltaY;
+        })
+        nextbutton.addEventListener("click",()=>{
+            scrollContainer.scrollLeft +=900;
+        })
+        prevbutton.addEventListener("click",()=>{
+            scrollContainer.scrollLeft -=900;
+        })
+    </script>
+</body>
+</html>
